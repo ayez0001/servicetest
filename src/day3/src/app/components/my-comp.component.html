@@ -1,0 +1,40 @@
+<p>my-comp works!</p>
+<h1>RSVP to my Party</h1>
+
+<form #form="ngForm" (ngSubmit)="processForm(form)">
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" ngModel required> <br>
+
+  <label for="guest">Guest</label>
+  <input type="tel" id="guest" name="guest" ngModel required>
+  <input TYPE="NUMBER" MIN="0" MAX="3" STEP="1"> <br>
+
+  <label for="phone">Phone:</label>
+  <input type="phone" id="phone" name="phone" ngModel required> <br>
+
+  <label for="arrival">Arrival:</label>
+  <input type="date" id="arrival" name="arrival" ngModel> <br>
+
+  <label for="vegetable">Vegetarian</label>
+  <input type="radio" id="vegetable" name="vegetable" value="yes" ngModel required> YES
+  <input type="radio" id="vegetable" name="vegetable" value="no" ngModel required> NO <br>
+
+  <label for="allergies">Food allergies:</label>
+  <input type="checkbox" id="allergies" name="allergies-seafood" value="seafood" ngModel> SEAFOOD
+  <input type="checkbox" id="allergies" name="allergies-peanut" value="peanut" ngModel> PEANUT
+
+  <label for="comments">Comments:</label>
+  <textarea name="comments" id="comments" cols="30" rows="10" ngModel></textarea>
+  <br>
+
+  <button type="clear" [disabled]="form.invalid">
+   Register
+  </button>
+
+  <button type="clear" >
+   Clear
+  </button>
+
+
+
